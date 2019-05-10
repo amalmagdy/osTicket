@@ -194,7 +194,7 @@ class TicketApiController extends ApiController {
                  return $this->exerr(422, __('missing ticketNumber parameter '));
              
             # Checks for valid ticket number
-            if (!is_numeric($ticket_number))
+            if (!ctype_alnum($ticket_number))
                 return $this->response(404, __("Invalid ticket number"));
     
             
